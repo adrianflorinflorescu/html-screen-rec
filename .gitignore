@@ -1,0 +1,7 @@
+# igonore node specific files
+node_modules
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.DS_Store
+.env
