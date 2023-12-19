@@ -1,28 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recorder</title>
-</head>
-<body>
-  <button id="start">
-    Start Recording
-  </button>
-  <button id="stop">
-    Stop Recording
-  </button>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Recorder</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
 
-<!-- inline script index.js -->
-<script>
-  console.log('Hello');
-</script>
+    <body>
+        <div class="flex justify-center items-center h-screen bg-slate-100">
+            <div class="max-w-2xl text-center">
+                <div class="mt-10">
+                    <img
+                        src="./logo.png"
+                        alt="logo"
+                        class="w-10 mx-auto shadow-xl"
+                    />
+                    <h1 class="text-large text-amber-800 font-bold mt-4">
+                        Screen Recorder
+                    </h1>
+                    <div class="my-10">
+                        <p class="text-base text-gray-400">
+                            Easily record your screen with our web-based tool, powered by WebRTC and MediaRecorder API. Just click the red button to start, and click it again to stop. Your recording automatically downloads to your device for immediate playback
+                        </p>
+                    </div>
+                </div>
 
-<script type="module">
-  import {init} from './index.js';
-  init();
-</script>
+                <div
+                    class="flex flex-col items-center justify-center"
+                >
+                    <button
+                        class="rounded-full bg-white shadow-xl p-4 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 border border-gray-200"
+                        id="start"
+                    >
+                        <!-- red dot inside -->
+                        <div class="w-4 h-4 bg-red-500 rounded-full"></div>
+                    </button>
 
+                    <button
+                        class="rounded-full bg-white shadow-xl p-4 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 border border-gray-200"
+                        id="stop"
+                    >
+                        <!-- red dot inside -->
+                        <div class="w-4 h-4 bg-red-500 rounded-sm"></div>
+                    </button>
+
+                    <div>
+                        <p
+                            class="text-gray-500 text-sm mt-4"
+                            id="recording-text"
+                        >
+                            Click the red button to start recording
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <video
+                        id="video"
+                        class="w-80 h-80 border border-red-300 mt-10 mx-auto rounded-xl shadow-2xl"
+                        autoplay
+                        playsinline
+                        muted
+                        controls
+                    ></video>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- inline script index.js -->
+    <script>
+        console.log('Hello')
+    </script>
+
+    <script type="module">
+        import { init } from './index.js'
+        init()
+    </script>
 </html>
