@@ -2,6 +2,7 @@ const startElement = document.getElementById('start')
 const stopElement = document.getElementById('stop');
 const videoElement = document.getElementById('video')
 const recordingTextElement = document.getElementById('recording-text')
+const errorWrapperElement = document.getElementById('error-wrapper')
 
 let recordedChunks = [];
 
@@ -104,7 +105,26 @@ function startRec() {
 export async function init() {
     // First, check if the browser supports the MediaRecorder API
     if (!MediaRecorder.isTypeSupported('video/webm;codecs=vp9')) {
-        console.error('MediaRecorder is not supported by this browser.')
+        
+
+        // show the error-wrapper element
+        errorWrapperElement.classList.remove('hidden')
+
+        // hide the start button
+        startElement.classList.add('hidden')
+
+        // hide the stop button
+        stopElement.classList.add('hidden')
+
+        // hide the video element
+        videoElement.classList.add('hidden')
+
+        // hide the recording text element
+        recordingTextElement.textContent = ''
+
+        // stop the function from continuing any further
+        console.error('MediaRecorder is not supported by this browser.', recordingTextElement)
+
         return
     }
 

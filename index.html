@@ -13,7 +13,7 @@
     <body>
         <div class="flex justify-center items-center h-screen bg-slate-100">
             <div class="max-w-2xl text-center">
-                <div class="mt-10">
+                <div class="mt-10 p-3">
                     <img
                         src="./logo.png"
                         alt="logo"
@@ -24,8 +24,31 @@
                     </h1>
                     <div class="my-10">
                         <p class="text-base text-gray-400">
-                            Easily record your screen with our web-based tool, powered by WebRTC and MediaRecorder API. Just click the red button to start, and click it again to stop. Your recording automatically downloads to your device for immediate playback
+                            This is a simple screen recorder built with
+                            JavaScript. It uses the MediaStream
+                            Recording API to record the screen and save it as a
+                            webm video file. The video is recorded locally and is
+                            not uploaded to any server. The source code is
+                            available on
+                            <a
+                                class="text-blue-500"
+                                href="https://github.com/adrianflorinflorescu/html-screen-rec"
+                                target="_blank"
+                                rel="noopener noreferrer"
+
+                                >
+                            GitHub.
+                            </a>
                         </p>
+                    </div>
+
+                    <div id="error-wrapper" class="hidden">
+                        <p
+                            class="text-red-500 text-sm"
+                            id="error-text"
+                        >
+                            Error: Your browser does not support recording
+                    </p>
                     </div>
                 </div>
 
@@ -68,8 +91,28 @@
                         controls
                     ></video>
                 </div>
+
+       
             </div>
         </div>
+
+        <div class="mt-10 text-xs 
+        text-blue-500
+        sticky
+        bottom-0
+        left-0
+        right-0
+        p-3
+        bg-white
+        border-t
+        border-gray-200
+        text-center
+        
+    ">
+        Created by <a href="http://adrianf.com">
+            Adrian Florescu https://adrianf.com
+        </a>
+    </div>
     </body>
 
     <!-- inline script index.js -->
