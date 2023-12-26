@@ -78,6 +78,7 @@ function startRec() {
           let url = URL.createObjectURL(blob);
 
           videoElement.srcObject = null;
+          videoElement.crossOrigin = 'anonymous';
           videoElement.src = url;
           videoElement.controls = true;
           videoElement.load(); // Load the videoElement
